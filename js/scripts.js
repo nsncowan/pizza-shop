@@ -1,4 +1,4 @@
-function Menu {
+const Menu {
   toppings = ['cheese', 'pepperoni', 'sausage', 'peppers', 'pineapple', 'ham', 'anchovies',]
   size = ['small', 'medium', 'large']
 }
