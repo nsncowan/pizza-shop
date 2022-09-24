@@ -1,34 +1,45 @@
 // business logic
 
 function Order() {
-  this.order = {}
-  this.orderNum = 0
+  this.order = {};
+  this.orderNum = 0;
   this.orderCost = 0
 }
 
-function Pizza([toppings], size) {
+Order.prototype.assignOrderNum = function() {
+  this.orderNum += 1;
+  return this.orderNum;
+}
+
+function Pizza([toppings], size, cost) {
   this.toppings = toppings;
   this.size = size;
+  this.cost = cost
 }
 
 Pizza.prototype.cost = function() {
-  let toppingsCost = toppings.length * 1.5
+  let Cost = toppings.length * 1.5
   if (size === 'small') {
-    toppingCost += 10;
+    Cost += 10;
   }
   else if (size === 'medium') {
-    toppingCost += 14;
+    Cost += 14;
   }
   else {
-    toppingCost += 18;
+    Cost += 18;
   }
+  return Cost;
 }
 
+Order.prototype.addPizza = function(pizza) {
+
+}
 
 // UI
  
 function handleFormSubmission(e) {
   e.preventDefault();
   //const size = 
-  const toppings = document.querySelectorAll("input[name=topping]:checked")
+  const toppings = document.querySelectorAll("input[name=topping]:checked");
+  const toppingsArray = Array.from(toppings);
 }
